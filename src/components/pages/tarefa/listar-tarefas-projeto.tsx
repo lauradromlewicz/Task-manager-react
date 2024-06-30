@@ -14,7 +14,7 @@ function ListarTarefasPorProjeto() {
 
   async function carregarTarefas(projetoId: string) {
     try {
-      const response = await fetch(`http://localhost:5028/api/projeto/${projetoId}/tarefas`);
+      const response = await fetch(`http://localhost:5251/api/projeto/${projetoId}/tarefas`);
       if (!response.ok) {
         throw new Error('Erro ao buscar tarefas por projeto');
       }
@@ -36,6 +36,7 @@ function ListarTarefasPorProjeto() {
             <th>Descrição</th>
             <th>Prazo</th>
             <th>Prioridade</th>
+            <th>ID do Projeto</th>
             <th>Atribuições</th>
           </tr>
         </thead>
@@ -47,6 +48,7 @@ function ListarTarefasPorProjeto() {
               <td>{tarefa.descricao}</td>
               <td>{tarefa.prazo}</td>
               <td>{tarefa.prioridade}</td>
+              <td>{tarefa.projetoId}</td>
             </tr>
           ))}
         </tbody>

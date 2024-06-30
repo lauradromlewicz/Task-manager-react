@@ -13,7 +13,7 @@ function ListarProjetos() {
 
   async function carregarProjetos() {
     try {
-      const response = await fetch('http://localhost:5028/api/projeto/listar');
+      const response = await fetch('http://localhost:5251/api/projeto/listar');
       if (!response.ok) {
         throw new Error('Erro ao buscar projetos');
       }
@@ -31,7 +31,7 @@ function ListarProjetos() {
     }
 
     try {
-      const response = await fetch(`http://localhost:5028/api/projeto/buscar/${idBusca}`);
+      const response = await fetch(`http://localhost:5251/api/projeto/buscar/${idBusca}`);
       if (!response.ok) {
         throw new Error('Erro ao buscar projeto');
       }
@@ -45,7 +45,7 @@ function ListarProjetos() {
 
   async function handleDelete(id: string) {
     try {
-      const response = await fetch(`http://localhost:5028/api/projeto/deletar/${id}`, {
+      const response = await fetch(`http://localhost:5251/api/projeto/deletar/${id}`, {
         method: 'DELETE',
       });
       if (!response.ok) {

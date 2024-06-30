@@ -16,7 +16,7 @@ function AlterarUsuario() {
 
   async function carregarUsuario(id: string) {
     try {
-      const response = await fetch(`http://localhost:5028/api/usuario/buscar/${id}`);
+      const response = await fetch(`http://localhost:5251/api/usuario/buscar/${id}`);
       if (!response.ok) {
         throw new Error('Erro ao buscar usuário');
       }
@@ -33,7 +33,7 @@ function AlterarUsuario() {
     const usuario: Usuario = { nome, email };
 
     try {
-      const response = await fetch(`http://localhost:5028/api/usuario/alterar/${id}`, {
+      const response = await fetch(`http://localhost:5251/api/usuario/alterar/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

@@ -16,19 +16,17 @@ function App() {
   return (
     <>
     <BrowserRouter>
-      <header>
-        <nav>
-          <ul>
-            <li><Link to="/">HOME</Link></li>
-            <li><Link to="/usuario/criar">CRIAR USUÁRIO</Link></li>
-            <li><Link to="/usuario/listar">LISTAR USUÁRIOS</Link></li>
-            <li><Link to="/projeto/criar">CRIAR PROJETO</Link></li>
-            <li><Link to="/projeto/listar">LISTAR PROJETOS</Link></li>
-            <li><Link to="/tarefa/criar">CRIAR TAREFA</Link></li>
-            <li><Link to="/tarefa/listar">LISTAR TAREFAS</Link></li>
-          </ul>
-        </nav>  
-      </header>
+      <nav>
+        <ul>
+          <li><Link to="/">HOME</Link></li>
+          <li><Link to="/usuario/criar">CRIAR USUÁRIO</Link></li>
+          <li><Link to="/usuario/listar">LISTAR USUÁRIOS</Link></li>
+          <li><Link to="/projeto/criar">CRIAR PROJETO</Link></li>
+          <li><Link to="/projeto/listar">LISTAR PROJETOS</Link></li>
+          <li><Link to="/tarefa/criar">CRIAR TAREFA</Link></li>
+          <li><Link to="/tarefa/listar">LISTAR TAREFAS</Link></li>
+        </ul>
+      </nav>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/usuario/criar" element={<CriarUsuario />} />

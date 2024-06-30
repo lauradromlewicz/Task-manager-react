@@ -13,7 +13,7 @@ function ListarUsuarios() {
 
   async function carregarUsuarios() {
     try {
-      const response = await fetch('http://localhost:5028/api/usuario/listar');
+      const response = await fetch('http://localhost:5251/api/usuario/listar');
       if (!response.ok) {
         throw new Error('Erro ao buscar usuários');
       }
@@ -31,7 +31,7 @@ function ListarUsuarios() {
     }
 
     try {
-      const response = await fetch(`http://localhost:5028/api/usuario/buscar/${idBusca}`);
+      const response = await fetch(`http://localhost:5251/api/usuario/buscar/${idBusca}`);
       if (!response.ok) {
         throw new Error('Erro ao buscar usuário');
       }
@@ -45,7 +45,7 @@ function ListarUsuarios() {
 
   async function Delete(id: string) {
     try {
-      const response = await fetch(`http://localhost:5028/api/usuario/deletar/${id}`, {
+      const response = await fetch(`http://localhost:5251/api/usuario/deletar/${id}`, {
         method: 'DELETE',
       });
       if (!response.ok) {
