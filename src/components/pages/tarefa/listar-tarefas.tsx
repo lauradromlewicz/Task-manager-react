@@ -11,6 +11,10 @@ function ListarTarefas() {
     carregarTarefas();
   }, []);
 
+  useEffect(() => {
+    handleBuscar();
+  }, [idBusca, prioridade]);
+
   async function carregarTarefas() {
     try {
       const response = await fetch('http://localhost:5028/api/tarefa/listar');
@@ -96,7 +100,6 @@ function ListarTarefas() {
           value={idBusca}
           onChange={(e) => setIdBusca(e.target.value)}
         />
-        <button onClick={handleBuscar}>Buscar</button>
       </div>
       <table>
         <thead>

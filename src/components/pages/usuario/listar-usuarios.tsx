@@ -4,12 +4,16 @@ import { Link } from 'react-router-dom';
 
 function ListarUsuarios() {
   const [usuarios, setUsuarios] = useState<Usuario[]>([]);
-  const [idBusca, setIdBusca] = useState('');
+  const [idBusca, setIdBusca] = useState<string>('');
   const [usuarioEncontrado, setUsuarioEncontrado] = useState<Usuario | null>(null);
 
   useEffect(() => {
     carregarUsuarios();
   }, []);
+
+  useEffect(() => {
+    buscarUsuarioPorId();
+  }, [idBusca]);
 
   async function carregarUsuarios() {
     try {
@@ -52,6 +56,7 @@ function ListarUsuarios() {
         throw new Error('Erro ao deletar usuário');
       }
       carregarUsuarios();
+      setIdBusca('');  // Limpa o campo de busca ao deletar um usuário
     } catch (error) {
       console.error('Erro ao deletar usuário:', error);
     }
@@ -60,7 +65,6 @@ function ListarUsuarios() {
   return (
     <div>
       <h1>Listar Usuários</h1>
-      
       <div>
         <input
           type="text"
@@ -68,7 +72,6 @@ function ListarUsuarios() {
           value={idBusca}
           onChange={(e) => setIdBusca(e.target.value)}
         />
-        <button onClick={buscarUsuarioPorId}>Buscar</button>
       </div>
 
       {usuarioEncontrado ? (

@@ -12,6 +12,7 @@ import AlterarTarefa from './components/pages/tarefa/alterar-tarefa';
 import ListarTarefasPorPrioridade from './components/pages/tarefa/listar-tarefas-prioridade';
 import ListarTarefasPorProjeto from './components/pages/tarefa/listar-tarefas-projeto';
 import Home from './components/pages/home/home';
+import ListarNotificacoes from './components/pages/Notificações/listar-notificações';
 function App() {
   return (
     <>
@@ -21,11 +22,12 @@ function App() {
           <ul>
             <li><Link to="/">HOME</Link></li>
             <li><Link to="/usuario/criar">CRIAR USUÁRIO</Link></li>
-            <li><Link to="/usuario/listar">LISTAR USUÁRIOS</Link></li>
+            <li><Link to="/usuario/listar">USUÁRIOS</Link></li>
             <li><Link to="/projeto/criar">CRIAR PROJETO</Link></li>
-            <li><Link to="/projeto/listar">LISTAR PROJETOS</Link></li>
+            <li><Link to="/projeto/listar">PROJETOS</Link></li>
             <li><Link to="/tarefa/criar">CRIAR TAREFA</Link></li>
-            <li><Link to="/tarefa/listar">LISTAR TAREFAS</Link></li>
+            <li><Link to="/tarefa/listar">TAREFAS</Link></li>
+            <li><Link to="/usuario/notificacao">NOTIFICACOES</Link></li>
           </ul>
         </nav>  
       </header>
@@ -42,6 +44,7 @@ function App() {
           <Route path="/tarefa/alterar/:id" element={<AlterarTarefa />} />
           <Route path="/tarefa/prioridade/:prioridade" element={<ListarTarefasPorPrioridade />} />
           <Route path="/projeto/:projetoId/tarefas" element={<ListarTarefasPorProjeto />} />
+          <Route path="/usuario/notificacao" element={<ListarNotificacoes />} />
         </Routes>
       <footer>
         <h2>Desenvolvido por Nicolas e Laura &copy;</h2>
