@@ -11,7 +11,7 @@ function CriarProjeto() {
     const projeto: Projeto = { nome };
 
     try {
-      const response = await fetch('http://localhost:5251/api/projeto/criar', {
+      const response = await fetch('http://localhost:5028/api/projeto/criar', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

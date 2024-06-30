@@ -19,7 +19,7 @@ function AlterarTarefa() {
 
   async function carregarTarefa(id: string) {
     try {
-      const response = await fetch(`http://localhost:5251/api/tarefa/buscar/${id}`);
+      const response = await fetch(`http://localhost:5028/api/tarefa/buscar/${id}`);
       if (!response.ok) {
         throw new Error('Erro ao buscar tarefa');
       }
@@ -39,7 +39,7 @@ function AlterarTarefa() {
     const tarefa: Tarefa = { titulo, descricao, prazo, prioridade, projetoId };
 
     try {
-      const response = await fetch(`http://localhost:5251/api/tarefa/alterar/${id}`, {
+      const response = await fetch(`http://localhost:5028/api/tarefa/alterar/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

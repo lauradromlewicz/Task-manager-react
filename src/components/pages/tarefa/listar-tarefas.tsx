@@ -13,7 +13,7 @@ function ListarTarefas() {
 
   async function carregarTarefas() {
     try {
-      const response = await fetch('http://localhost:5251/api/tarefa/listar');
+      const response = await fetch('http://localhost:5028/api/tarefa/listar');
       if (!response.ok) {
         throw new Error('Erro ao buscar tarefas');
       }
@@ -26,7 +26,7 @@ function ListarTarefas() {
 
   async function carregarTarefasPorPrioridade(prioridade: string) {
     try {
-      const response = await fetch(`http://localhost:5251/api/tarefa/listarporprioridade/${prioridade}`);
+      const response = await fetch(`http://localhost:5028/api/tarefa/listarporprioridade/${prioridade}`);
       if (!response.ok) {
         throw new Error('Erro ao buscar tarefas por prioridade');
       }
@@ -40,7 +40,7 @@ function ListarTarefas() {
 
   async function carregarTarefaPorId(id: string) {
     try {
-      const response = await fetch(`http://localhost:5251/api/tarefa/buscar/${id}`);
+      const response = await fetch(`http://localhost:5028/api/tarefa/buscar/${id}`);
       if (!response.ok) {
         throw new Error('Erro ao buscar tarefa');
       }
@@ -54,7 +54,7 @@ function ListarTarefas() {
 
   async function handleDelete(id: string) {
     try {
-      const response = await fetch(`http://localhost:5251/api/tarefa/deletar/${id}`, {
+      const response = await fetch(`http://localhost:5028/api/tarefa/deletar/${id}`, {
         method: 'DELETE',
       });
       if (!response.ok) {
@@ -107,8 +107,9 @@ function ListarTarefas() {
             <th>Prazo</th>
             <th>Prioridade</th>
             <th>ID do Projeto</th>
+            <th>Status</th>
             <th>Alterar</th>
-            <th>Remover</th>
+            <th>Concluir</th>
           </tr>
         </thead>
         <tbody>
@@ -120,11 +121,12 @@ function ListarTarefas() {
               <td>{tarefa.prazo}</td>
               <td>{tarefa.prioridade}</td>
               <td>{tarefa.projetoId}</td>
+              <td>Em andamento</td>
               <td>
                 <Link to={`/tarefa/alterar/${tarefa.id}`}>Alterar</Link>
               </td>
               <td>
-                <button onClick={() => handleDelete(tarefa.id!)}>Deletar</button>
+                <button onClick={() => handleDelete(tarefa.id!)}>Concluir</button>
               </td>
             </tr>
           ))}

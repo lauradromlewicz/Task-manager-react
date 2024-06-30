@@ -13,7 +13,7 @@ function CriarUsuario() {
     const usuario: Usuario = { nome, email };
 
     try {
-      const response = await fetch('http://localhost:5251/api/usuario/criar', {
+      const response = await fetch('http://localhost:5028/api/usuario/criar', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
