@@ -11,8 +11,9 @@ import ListarTarefas from './components/pages/tarefa/listar-tarefas';
 import AlterarTarefa from './components/pages/tarefa/alterar-tarefa';
 import ListarTarefasPorPrioridade from './components/pages/tarefa/listar-tarefas-prioridade';
 import ListarTarefasPorProjeto from './components/pages/tarefa/listar-tarefas-projeto';
+import ListarNotificacoes from './components/pages/notificacao/listar-notificacoes';
 import Home from './components/pages/home/home';
-import ListarNotificacoes from './components/pages/Notificações/listar-notificações';
+
 function App() {
   return (
     <>
@@ -21,12 +22,12 @@ function App() {
           <ul>
             <li><Link to="/">HOME</Link></li>
             <li><Link to="/usuario/criar">CRIAR USUÁRIO</Link></li>
-            <li><Link to="/usuario/listar">USUÁRIOS</Link></li>
+            <li><Link to="/usuario/listar">LISTAR USUÁRIOS</Link></li>
             <li><Link to="/projeto/criar">CRIAR PROJETO</Link></li>
-            <li><Link to="/projeto/listar">PROJETOS</Link></li>
+            <li><Link to="/projeto/listar">LISTAR PROJETOS</Link></li>
             <li><Link to="/tarefa/criar">CRIAR TAREFA</Link></li>
-            <li><Link to="/tarefa/listar">TAREFAS</Link></li>
-            <li><Link to="/notificacoes">NOTIFICACOES</Link></li>
+            <li><Link to="/tarefa/listar">LISTAR TAREFAS</Link></li>
+            <li><Link to="/notificacoes">NOTIFICAÇÕES</Link></li>
           </ul>
         </nav>
         <Routes>

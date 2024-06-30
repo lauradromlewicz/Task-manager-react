@@ -4,16 +4,12 @@ import { Link } from 'react-router-dom';
 
 function ListarProjetos() {
   const [projetos, setProjetos] = useState<Projeto[]>([]);
-  const [idBusca, setIdBusca] = useState<string>('');
+  const [idBusca, setIdBusca] = useState('');
   const [projetoEncontrado, setProjetoEncontrado] = useState<Projeto | null>(null);
 
   useEffect(() => {
     carregarProjetos();
   }, []);
-
-  useEffect(() => {
-    buscarProjetoPorId();
-  }, [idBusca]);
 
   async function carregarProjetos() {
     try {
@@ -56,7 +52,6 @@ function ListarProjetos() {
         throw new Error('Erro ao deletar projeto');
       }
       carregarProjetos();
-      setIdBusca('');  // Limpa o campo de busca ao deletar um projeto
     } catch (error) {
       console.error('Erro ao deletar projeto:', error);
     }
@@ -73,6 +68,7 @@ function ListarProjetos() {
           value={idBusca}
           onChange={(e) => setIdBusca(e.target.value)}
         />
+        <button onClick={buscarProjetoPorId}>Buscar</button>
       </div>
 
       {projetoEncontrado ? (
