@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { Projeto } from '../../../models/Projeto';
+import React from 'react';
 import logo from './../../imagens/logo.jpg';
 
 function Home() {
   return (
-    <div>
-        <img src={logo} alt="Logo" width={1009}/>
+    <div className="home-container">
+      <img src={logo} alt="Logo" className="home-logo" />
     </div>
   );
 }

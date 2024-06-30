@@ -26,7 +26,7 @@ function App() {
             <li><Link to="/projeto/listar">PROJETOS</Link></li>
             <li><Link to="/tarefa/criar">CRIAR TAREFA</Link></li>
             <li><Link to="/tarefa/listar">TAREFAS</Link></li>
-            <li><Link to="/usuario/notificacao">NOTIFICACOES</Link></li>
+            <li><Link to="/notificacoes">NOTIFICACOES</Link></li>
           </ul>
         </nav>
         <Routes>
