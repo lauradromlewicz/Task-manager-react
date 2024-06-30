@@ -11,22 +11,25 @@ import ListarTarefas from './components/pages/tarefa/listar-tarefas';
 import AlterarTarefa from './components/pages/tarefa/alterar-tarefa';
 import ListarTarefasPorPrioridade from './components/pages/tarefa/listar-tarefas-prioridade';
 import ListarTarefasPorProjeto from './components/pages/tarefa/listar-tarefas-projeto';
+import ListarNotificacoes from './components/pages/notificacao/listar-notificacoes';
 import Home from './components/pages/home/home';
+
 function App() {
   return (
     <>
-    <BrowserRouter>
-      <nav>
-        <ul>
-          <li><Link to="/">HOME</Link></li>
-          <li><Link to="/usuario/criar">CRIAR USUÁRIO</Link></li>
-          <li><Link to="/usuario/listar">LISTAR USUÁRIOS</Link></li>
-          <li><Link to="/projeto/criar">CRIAR PROJETO</Link></li>
-          <li><Link to="/projeto/listar">LISTAR PROJETOS</Link></li>
-          <li><Link to="/tarefa/criar">CRIAR TAREFA</Link></li>
-          <li><Link to="/tarefa/listar">LISTAR TAREFAS</Link></li>
-        </ul>
-      </nav>
+      <BrowserRouter>
+        <nav>
+          <ul>
+            <li><Link to="/">HOME</Link></li>
+            <li><Link to="/usuario/criar">CRIAR USUÁRIO</Link></li>
+            <li><Link to="/usuario/listar">LISTAR USUÁRIOS</Link></li>
+            <li><Link to="/projeto/criar">CRIAR PROJETO</Link></li>
+            <li><Link to="/projeto/listar">LISTAR PROJETOS</Link></li>
+            <li><Link to="/tarefa/criar">CRIAR TAREFA</Link></li>
+            <li><Link to="/tarefa/listar">LISTAR TAREFAS</Link></li>
+            <li><Link to="/notificacoes">NOTIFICAÇÕES</Link></li>
+          </ul>
+        </nav>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/usuario/criar" element={<CriarUsuario />} />
@@ -40,12 +43,13 @@ function App() {
           <Route path="/tarefa/alterar/:id" element={<AlterarTarefa />} />
           <Route path="/tarefa/prioridade/:prioridade" element={<ListarTarefasPorPrioridade />} />
           <Route path="/projeto/:projetoId/tarefas" element={<ListarTarefasPorProjeto />} />
+          <Route path="/notificacoes" element={<ListarNotificacoes />} />
         </Routes>
-      <footer>
-        <h2>Desenvolvido por Nicolas e Laura &copy;</h2>
-      </footer>
-    </BrowserRouter>
-  </>
+        <footer>
+          <h2>Desenvolvido por Nicolas e Laura &copy;</h2>
+        </footer>
+      </BrowserRouter>
+    </>
   );
 }
 
