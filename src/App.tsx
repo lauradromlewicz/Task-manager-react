@@ -16,8 +16,7 @@ import ListarNotificacoes from './components/pages/Notificações/listar-notific
 function App() {
   return (
     <>
-    <BrowserRouter>
-      <header>
+      <BrowserRouter>
         <nav>
           <ul>
             <li><Link to="/">HOME</Link></li>
@@ -29,8 +28,7 @@ function App() {
             <li><Link to="/tarefa/listar">TAREFAS</Link></li>
             <li><Link to="/usuario/notificacao">NOTIFICACOES</Link></li>
           </ul>
-        </nav>  
-      </header>
+        </nav>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/usuario/criar" element={<CriarUsuario />} />
@@ -44,13 +42,13 @@ function App() {
           <Route path="/tarefa/alterar/:id" element={<AlterarTarefa />} />
           <Route path="/tarefa/prioridade/:prioridade" element={<ListarTarefasPorPrioridade />} />
           <Route path="/projeto/:projetoId/tarefas" element={<ListarTarefasPorProjeto />} />
-          <Route path="/usuario/notificacao" element={<ListarNotificacoes />} />
+          <Route path="/notificacoes" element={<ListarNotificacoes />} />
         </Routes>
-      <footer>
-        <h2>Desenvolvido por Nicolas e Laura &copy;</h2>
-      </footer>
-    </BrowserRouter>
-  </>
+        <footer>
+          <h2>Desenvolvido por Nicolas e Laura &copy;</h2>
+        </footer>
+      </BrowserRouter>
+    </>
   );
 }
 

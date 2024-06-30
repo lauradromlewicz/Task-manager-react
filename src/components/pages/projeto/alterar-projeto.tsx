@@ -15,7 +15,7 @@ function AlterarProjeto() {
 
   async function carregarProjeto(id: string) {
     try {
-      const response = await fetch(`http://localhost:5028/api/projeto/buscar/${id}`);
+      const response = await fetch(`http://localhost:5251/api/projeto/buscar/${id}`);
       if (!response.ok) {
         throw new Error('Erro ao buscar projeto');
       }
@@ -31,7 +31,7 @@ function AlterarProjeto() {
     const projeto: Projeto = { nome };
 
     try {
-      const response = await fetch(`http://localhost:5028/api/projeto/alterar/${id}`, {
+      const response = await fetch(`http://localhost:5251/api/projeto/alterar/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

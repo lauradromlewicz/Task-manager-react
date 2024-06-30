@@ -15,7 +15,7 @@ function ListarTarefasPorPrioridade() {
 
   async function carregarTarefas(prioridade: string) {
     try {
-      const response = await fetch(`http://localhost:5028/api/tarefa/listarporprioridade/${prioridade}`);
+      const response = await fetch(`http://localhost:5251/api/tarefa/listarporprioridade/${prioridade}`);
       if (!response.ok) {
         throw new Error('Erro ao buscar tarefas por prioridade');
       }

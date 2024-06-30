@@ -17,7 +17,7 @@ function CriarTarefa() {
     console.log('Dados da tarefa:', tarefa); // Log para verificar os dados
 
     try {
-      const response = await fetch('http://localhost:5028/api/tarefa/criar', {
+      const response = await fetch('http://localhost:5251/api/tarefa/criar', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
